@@ -8,39 +8,78 @@
 }
 body{
     scroll-behavior: smooth;
-    width: 100vw;
+    max-width: 100vw;
     overflow-x: hidden;
 }
 
 /*---------------nav design----------*/
 nav{
     max-width: 100vw;
+    display: flex;
+    background-color: orange;
+    align-items: center;
+    position: relative;
+    height: 50px;
+
 }
- nav ul{
+nav h1 span{
+    padding: 0 5px;
+    display: inline-block;
+}
+nav h1{
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+nav ul{
     display: flex;
     justify-content: flex-end;
-    background-color: orange;
-    padding-right: 20px;
- }
- ul li {
+}
+ul li{
     list-style-type: none;
-    padding: 20px;
     font-size: 1.3rem;
-    
- }
- ul li a{
+    transition: 0.2s all linear;
+}
+ul li a{
+    display: block;
+    padding: 15px;
+
     text-decoration: none;
     color: black;
     transition: 0.2s all linear;
- }
- ul li a:hover{
+}
+ul li a:hover{
     color: white;
     text-shadow: 1px 1px 5px black;
- }
- ul li:last-child{
-    display: none;
- }
+}
 
+.burger-menu{
+    display: none;
+}
+
+@media screen and (max-width:768px){
+    nav ul{
+        width: 100%;
+        text-align: center;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        background-color: orange;
+    }
+    nav ul li:hover{
+        display: block;
+        background-color: rgb(213, 139, 0);
+    }
+    .burger-menu{
+        display: flex;
+        font-size: 30px;
+        padding: 5px;
+        cursor: pointer;
+    }
+}
 
 .header{
     height: 100vh;
@@ -220,7 +259,6 @@ nav{
         clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
     }
     .our-menu-details{
-        padding-right: 10rem;
         flex: 0 0 30%;
     }
 }
@@ -325,35 +363,8 @@ nav{
     display: block;
     animation: zoom 0.4s linear;
 }
-/*
 
-.food-image:hover .buy{
-    opacity: 1;
-}
-
-.food-image .buy{
-    height: 0%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 0 20px 10px 20px;
-    opacity: 0;
-    transition: 0.5s all linear ;
-    
-}
-
-.food-image i{
-    font-size: 1.5rem;
-    color: white;
-}
-
-.food-image button{
-    all: unset;
-    background-color: orange;
-    padding:10px 14px;
-    border-radius: 200px;
-    color: white;
-} */
+ 
 @keyframes zoom{
     0%{
         transform: scale(0);
@@ -433,8 +444,28 @@ nav{
 footer{
     background-color: black;
     color: white;
+    padding: 20px;
     text-align: center;
+}
+footer address{
+    padding: 5px;
+}
+footer p{
+    font-size: 14px;
+    padding: 2px;
+}
+footer .social-media{
     padding: 10px;
+}
+footer .social-media a{
+    font-size: 30px;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+footer span{
+    font-size: 11px;
+    font-weight: bold;
 }
 
 
